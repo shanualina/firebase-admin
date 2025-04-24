@@ -4,7 +4,11 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const app = express();
 const PORT = 3000;
-app.use(cors());
+app.use(
+  cors({
+    origin: "*",
+  })
+);
 // ✅ Load your Firebase service account key JSON file
 const serviceAccount = require("./healers-meet-firebase-adminsdk-7sb7s-b47abc4765.json");
 
