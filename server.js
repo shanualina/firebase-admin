@@ -12,10 +12,7 @@ app.use(
 );
 // ✅ Load your Firebase service account key JSON file
 // console.log("FIREBASE_CONFIG:", process.env.FIREBASE_CONFIG);
-const serviceAccount = JSON.parse(
-  process.env.FIREBASE_CONFIG.replace(/\\n/g, "\n")
-);
-
+const serviceAccount = require("./healers-meet-firebase-adminsdk-7sb7s-b47abc4765.json");
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
 });
