@@ -2,6 +2,7 @@ const express = require("express");
 const admin = require("firebase-admin");
 const bodyParser = require("body-parser");
 const cors = require("cors");
+require("dotenv").config();
 const app = express();
 const PORT = 3000;
 app.use(
@@ -10,6 +11,7 @@ app.use(
   })
 );
 // ✅ Load your Firebase service account key JSON file
+// console.log("FIREBASE_CONFIG:", process.env.FIREBASE_CONFIG);
 const serviceAccount = JSON.parse(
   process.env.FIREBASE_CONFIG.replace(/\\n/g, "\n")
 );
